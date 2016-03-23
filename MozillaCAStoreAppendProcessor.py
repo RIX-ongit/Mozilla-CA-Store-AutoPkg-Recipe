@@ -39,8 +39,9 @@ class MozillaCAStoreAppendProcessor(Processor):
         final_pem = self.env["final_pem"]
         
         with open(final_pem, 'w') as fout, fileinput.input([mozilla_pem, append_pem]) as fin:
-            for line in fn:
+            for line in fin:
                 fout.write(line)
+        fout.close()
         self.env["done"] = True
         self.output(True)
     
