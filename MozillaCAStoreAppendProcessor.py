@@ -13,15 +13,15 @@ class MozillaCAStoreAppendProcessor(Processor):
             "default": "MozillaCAStore",
             "description": "What to name the Final PEM file.",
         },
-        "append_pem": = {
+        "append_pem": {
             "required": True,
             "description": "The PEM file to be appended",
         },
-        "mozilla_pem": = {
+        "mozilla_pem": {
             "required": True,
             "description": "The Mozilla CA Certificate Store location.",
         },
-        "final_pem": = {
+        "final_pem": {
             "required": True,
             "description": "The location of the final PEM file.",
         },
