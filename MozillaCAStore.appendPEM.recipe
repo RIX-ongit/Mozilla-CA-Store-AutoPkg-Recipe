@@ -19,13 +19,15 @@
     <array>
         <dict>
             <key>Processor</key>
-            <string>FileCreator</string>
+            <string>MozillaCAStoreAppendProcessor</string>
             <key>Arguments</key>
             <dict>
-                <key>file_content</key>
-                <string>$(cat %pathname% %RECIPE_CACHE_DIR%/append.pem)</string>
-                <key>file_path</key>
+                <key>append_pem</key>
+                <string>%RECIPE_CACHE_DIR%/append.pem</string>
+                <key>final_pem</key>
                 <string>%RECIPE_CACHE_DIR%/Final.pem</string>
+                <key>mozilla_pem</key>
+                <string>%pathname%</string>
             </dict>
         </dict>
     </array>
