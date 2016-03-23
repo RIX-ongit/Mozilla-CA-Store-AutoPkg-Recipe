@@ -30,7 +30,6 @@
                 <string>%RECIPE_CACHE_DIR%/Final.pem</string>
             </dict>
         </dict>
-        </dict>
     </array>
 </dict>
 </plist>
