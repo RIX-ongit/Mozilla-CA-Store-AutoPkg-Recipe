@@ -26,7 +26,7 @@ class MozillaCAStoreAppendProcessor(Processor):
             "description": "The location of the final PEM file.",
         },
     }
-    out_variables = {
+    output_variables = {
         "done": {
             "description": "Returns True when new file is generated."
         }
