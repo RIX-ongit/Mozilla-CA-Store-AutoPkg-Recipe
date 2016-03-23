@@ -25,7 +25,7 @@
             <key>Arguments</key>
             <dict>
                 <key>file_content</key>
-                <string>"$(cat %pathname% %APPEND_PEM%)"</string>
+                <string>$(cat %pathname% %APPEND_PEM%)</string>
                 <key>file_path</key>
                 <string>%RECIPE_CACHE_DIR%/Final.pem</string>
             </dict>
