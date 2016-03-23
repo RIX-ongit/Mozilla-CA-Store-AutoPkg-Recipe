@@ -10,8 +10,6 @@
     <dict>
         <key>NAME</key>
         <string>MozillaCAStore</string>
-        <key>APPEND_PEM</key>
-        <string>%RECIPE_CACHE_DIR%/append.pem</string>
     </dict>
     <key>ParentRecipe</key>
     <string>co.luisrivera.download.MozillaCAStore</string>
@@ -25,7 +23,7 @@
             <key>Arguments</key>
             <dict>
                 <key>file_content</key>
-                <string>$(cat %pathname% %APPEND_PEM%)</string>
+                <string>$(cat %pathname% %RECIPE_CACHE_DIR%/append.pem)</string>
                 <key>file_path</key>
                 <string>%RECIPE_CACHE_DIR%/Final.pem</string>
             </dict>
