@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads latest Google Chrome disk image and builds a package.</string>
+    <key>Identifier</key>
+    <string>co.luisrivera.appendPEM.MozillaCAStore</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>MozillaCAStore</string>
+        <key>APPEND_PEM</key>
+        <string>%RECIPE_CACHE_DIR%/append.pem</string>
+    </dict>
+    <key>ParentRecipe</key>
+    <string>co.luisrivera.download.MozillaCAStore</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>FileCreator</string>
+            <key>Arguments</key>
+            <dict>
+                <key>file_content</key>
+                <string>"$(cat %pathname% %APPEND_PEM%)"</string>
+                <key>file_path</key>
+                <string>%RECIPE_CACHE_DIR%/Final.pem</string>
+            </dict>
+        </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
