@@ -26,6 +26,11 @@ class MozillaCAStoreAppendProcessor(Processor):
             "description": "The location of the final PEM file.",
         },
     }
+    out_variables = {
+        "done": {
+            "description": "Returns True when new file is generated."
+        }
+    }
     
     def main(self):
         product_name = self.env.get("product_name", "MozillaCAStore")
@@ -36,6 +41,8 @@ class MozillaCAStoreAppendProcessor(Processor):
         with open(final_pem, 'w') as fout, fileinput.input([mozilla_pem, append_pem]) as fin:
             for line in fn:
                 fout.write(line)
+        self.env["done"] = True
+        self.output(True)
     
 if __name__ == "__main__":
     PROCESSOR = MozillaCAStoreAppendProcessor()
