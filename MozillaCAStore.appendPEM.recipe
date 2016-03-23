@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest Google Chrome disk image and builds a package.</string>
+    <string>Downloads latest Mozilla CA Certificate Store and appends a local PEM file.</string>
     <key>Identifier</key>
     <string>co.luisrivera.appendPEM.MozillaCAStore</string>
     <key>Input</key>
