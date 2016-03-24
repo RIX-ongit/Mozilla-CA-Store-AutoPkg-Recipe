@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from autopkglib import Processor, ProcessorError
-import fileinput
+import os
 
 __all__ = ["MozillaCAStoreAppendProcessor"]
 
@@ -38,10 +38,8 @@ class MozillaCAStoreAppendProcessor(Processor):
         mozilla_pem = self.env["mozilla_pem"]
         final_pem = self.env["final_pem"]
         
-        with open(final_pem, 'w') as fout, fileinput.input([mozilla_pem, append_pem]) as fin:
-            for line in fin:
-                fout.write(line)
-            fout.close()
+        os.system("cat %s %s > %s" % (mozilla_pem,append_pem,final_pem))
+            
         self.env["done"] = True
         self.output(True)
     
